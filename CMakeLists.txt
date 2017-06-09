@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
-project(fraktal)
+project(julia_set_visualisation)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(SOURCE_FILES
+    bitmap.c
+    bitmap.h
+    main.c
+    targetver.h)
 
-set(SOURCE_FILES main.cpp bitmap.h bitmap.cpp)
-add_executable(fraktal ${SOURCE_FILES})
+add_executable(julia_set_visualisation ${SOURCE_FILES})

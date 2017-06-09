@@ -1,8 +1,5 @@
-//
-// Created by Aljaž on 7. 05. 2016.
-//
-
-#ifndef FRAKTAL_BITMAP_H
-#define FRAKTAL_BITMAP_H
-
-#endif //FRAKTAL_BITMAP_H
+#ifndef BITMAP_H
+	#define BITMAP_H
+	#define DIM 1024
+	void bmpOut(unsigned char picture[][DIM], const char* filename);
+#endif //BITMAP_H

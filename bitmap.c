@@ -1,9 +1,3 @@
-//
-// Created by Aljaž on 7. 05. 2016.
-//
-
-/// Library for outputting graphs of Julia sets into bitmap images.
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -11,7 +5,7 @@
 
 void saveToFile(BYTE* pBitmapBits, LONG lWidth, LONG lHeight, WORD wBitsPerPixel, LPCTSTR lpszFileName)
 {
-    RGBQUAD palette[256];
+    RGBQUAD pallete[256];
     BITMAPINFOHEADER bitmapInfoHeader = {0};
     BITMAPFILEHEADER bitmapFileHeader = {0};
     HANDLE hFile;
@@ -21,9 +15,9 @@ void saveToFile(BYTE* pBitmapBits, LONG lWidth, LONG lHeight, WORD wBitsPerPixel
 
     for (i = 0; i < 256; ++i)
     {
-        palette[i].rgbRed = i;
-        palette[i].rgbGreen = (i * 2) % 256;
-        palette[i].rgbBlue = (i * 3) % 256;
+        pallete[i].rgbRed = i;
+        pallete[i].rgbGreen = (i * 2) % 256;
+        pallete[i].rgbBlue = (i * 3) % 256;
     }
 
     bitmapInfoHeader.biSize = sizeof(BITMAPINFOHEADER);
