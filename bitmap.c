@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <windows.h>
 #include "bitmap.h"
 
 void saveToFile(BYTE* pBitmapBits, LONG lWidth, LONG lHeight, WORD wBitsPerPixel, LPCTSTR lpszFileName)
 {
-    RGBQUAD pallete[256];
+    RGBQUAD palette[256];
     BITMAPINFOHEADER bitmapInfoHeader = {0};
     BITMAPFILEHEADER bitmapFileHeader = {0};
     HANDLE hFile;
@@ -15,9 +14,9 @@ void saveToFile(BYTE* pBitmapBits, LONG lWidth, LONG lHeight, WORD wBitsPerPixel
 
     for (i = 0; i < 256; ++i)
     {
-        pallete[i].rgbRed = i;
-        pallete[i].rgbGreen = (i * 2) % 256;
-        pallete[i].rgbBlue = (i * 3) % 256;
+        palette[i].rgbRed = i;
+        palette[i].rgbGreen = (i * 2) % 256;
+        palette[i].rgbBlue = (i * 3) % 256;
     }
 
     bitmapInfoHeader.biSize = sizeof(BITMAPINFOHEADER);
@@ -40,7 +39,7 @@ void saveToFile(BYTE* pBitmapBits, LONG lWidth, LONG lHeight, WORD wBitsPerPixel
 
     WriteFile(hFile, &bitmapFileHeader, sizeof(bitmapFileHeader), &dwWritten, NULL);
     WriteFile(hFile, &bitmapInfoHeader, sizeof(bitmapInfoHeader), &dwWritten, NULL);
-    WriteFile(hFile, &pallete[0], sizeof(RGBQUAD) * 256, &dwWritten, NULL);
+    WriteFile(hFile, &palette[0], sizeof(RGBQUAD) * 256, &dwWritten, NULL);
 
     if (lWidth % 4 == 0)
     {
