@@ -25,7 +25,7 @@ struct complexNumber tmp;
 void numberInput()
 {
     printf("Enter the constant: ");
-    scanf_s("%lf %lf", &c.x, &c.y);
+    scanf("%lf %lf", &c.x, &c.y);
 }
 
 struct complexNumber addNumbers(struct complexNumber sum1, struct complexNumber sum2)
