@@ -3,7 +3,7 @@
 
 #define LIMIT 1.7
 #define STEP 2 * LIMIT / DIM
-#define DEPTH 256
+#define DEPTH 512
 
 /// struct for complex number representation
 /// x is a real component of the number
@@ -61,8 +61,8 @@ int main()
         for (j = 0; j < DIM; j++) {
             im = j * STEP - LIMIT;
 
-            z0.x = re;
-            z0.y = im;
+            z0.x = im;
+            z0.y = re;
 
             n = 0;
             while (n < DEPTH && (z0.x * z0.x + z0.y * z0.y) < 4) {
