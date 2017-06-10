@@ -1,7 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <windows.h>
 #include "bitmap.h"
 
 #define LIMIT 1.7
@@ -55,9 +52,6 @@ int main()
     int i, j;
     double re, im;
     int n;
-
-    //c.x = CONST_X;
-    //c.y = CONST_Y;
 
     numberInput();
 
